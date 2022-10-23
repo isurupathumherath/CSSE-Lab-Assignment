@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+
+	<employee_profile>
+		<employee_id>EMP10001</employee_id>
+		<employee_name>
+			<first_name>Udara</first_name>
+			<last_name>Samaratunge</last_name>
+		</employee_name>
+		<address>
+			<no>123/1</no>
+			<address_line1>Kandy Road</address_line1>
+			<address_line2>Gampaha</address_line2>
+		</address>
+		<faculty name="Computing">
+			<department>Software Engineering</department>
+		</faculty>
+		<designation>Lecturer</designation>
+	</employee_profile>
+
+	<employee_profile>
+		<employee_id>EMP10002</employee_id>
+		<employee_name>
+			<first_name>John</first_name>
+			<last_name>Smith</last_name>
+		</employee_name>
+		<address>
+			<no>50/1</no>
+			<address_line1>Cinnamon Garden</address_line1>
+			<address_line2>Colombo</address_line2>
+		</address>
+		<faculty name="Engineering">
+			<department>Electronic Engineering</department>
+		</faculty>
+		<designation>Engineer</designation>
+	</employee_profile>
+
+	<employee_profile>
+		<employee_id>EMP10003</employee_id>
+		<employee_name>
+			<first_name>Tharindu</first_name>
+			<last_name>Perera</last_name>
+		</employee_name>
+		<address>
+			<no>101/2</no>
+			<address_line1>Kesbewa Road</address_line1>
+			<address_line2>Piliyandala</address_line2>
+		</address>
+		<faculty name="Computing">
+			<department>Software Engineering</department>
+		</faculty>
+		<designation>Lecturer</designation>
+	</employee_profile>
+
+	<employee_profile>
+		<employee_id>EMP10004</employee_id>
+		<employee_name>
+			<first_name>Amila</first_name>
+			<last_name>Nuwan</last_name>
+		</employee_name>
+		<address>
+			<no>117/1</no>
+			<address_line1>Walasmulla Road</address_line1>
+			<address_line2>Hakmana</address_line2>
+		</address>
+		<faculty name="Computing">
+			<department>Computer Networking</department>
+		</faculty>
+		<designation>Lecturer</designation>
+	</employee_profile>
+
+	<employee_profile>
+		<employee_id>EMP10005</employee_id>
+		<employee_name>
+			<first_name>Saman</first_name>
+			<last_name>Kumara</last_name>
+		</employee_name>
+		<address>
+			<no>20/1</no>
+			<address_line1>New Kandy Road</address_line1>
+			<address_line2>Malabe</address_line2>
+		</address>
+		<faculty name="Business">
+			<department>Information System</department>
+		</faculty>
+		<designation>Lecturer</designation>
+	</employee_profile>
+
+	<employee_profile>
+		<employee_id>EMP10006</employee_id>
+		<employee_name>
+			<first_name>Nimal</first_name>
+			<last_name>Rathnayake</last_name>
+		</employee_name>
+		<address>
+			<no>117</no>
+			<address_line1>New Kandy Road</address_line1>
+			<address_line2>Malabe</address_line2>
+		</address>
+		<faculty name="Computing">
+			<department>Information Technology</department>
+		</faculty>
+		<designation>Lecturer</designation>
+	</employee_profile>
+
+</employees>
