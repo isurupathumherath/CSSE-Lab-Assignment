@@ -6,7 +6,7 @@ public interface EmployeeService {
 
 	/**  Initialize logger. */
 	public static final Logger log = Logger.getLogger(EmployeeService.class.getName());
-	
+
 	/**
 	 * Adds the employee.
 	 */
@@ -40,5 +40,15 @@ public interface EmployeeService {
 	 * @param id - the id
 	 */
 	public void removeEmployee(String id);
-	
+
+	/**
+	 * Create employee table.
+	 */
+	public void createEmployeeTable();
+
+	/**
+	 * Read data from XML file
+	 */
+	public void dataReaderXML();
+
 }

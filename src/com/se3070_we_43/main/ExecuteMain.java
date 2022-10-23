@@ -13,7 +13,8 @@ public class ExecuteMain {
 
 		EmployeeService employeeService = new EmployeeServiceImpl();
 		try {
-			XSLTransformUtil.requestTransform();
+			employeeService.createEmployeeTable();
+			employeeService.dataReaderXML();
 			employeeService.addEmployee();
 			employeeService.getEmployees();
 			employeeService.getEmployeeByID("EMP10004");

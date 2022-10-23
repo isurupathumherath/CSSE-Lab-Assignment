@@ -36,6 +36,6 @@
 	
 	<!-- Delete a particular employee by id Query -->
 	<query id="remove_employee">
-<!--         <![CDATA[ delete from employees where employees.EmployeeID = ?]]>-->
+         <![CDATA[delete from employees where employees.EmployeeID = ?]]>
 	</query>
 </Querys>
