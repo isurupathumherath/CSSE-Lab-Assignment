@@ -21,6 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      * Initialize logger.
      */
     public static final Logger log = Logger.getLogger(EmployeeServiceImpl.class.getName());
+
     /**
      * The connection.
      */
@@ -55,11 +56,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         try {
             Statement statement = connection.createStatement();
             // Drop table if already exists and as per SQL query available in
-            // Query.xml
-            statement.executeUpdate(QueryUtil.getEmployeeById(CommonConstants.QUERY_ID_DROP_EMPLOYEE_TABLE));
+            // SelectQuery.xml
+            statement.executeUpdate(QueryUtil.SelectQuery(CommonConstants.QUERY_ID_DROP_EMPLOYEE_TABLE));
             // Create new employees table as per SQL query available in
-            // Query.xml
-            statement.executeUpdate(QueryUtil.getEmployeeById(CommonConstants.QUERY_ID_CREATE_EMPLOYEE_TABLE));
+            // SelectQuery.xml
+            statement.executeUpdate(QueryUtil.SelectQuery(CommonConstants.QUERY_ID_CREATE_EMPLOYEE_TABLE));
         } catch (SAXException | IOException | ParserConfigurationException | SQLException e) {
             log.log(Level.SEVERE, e.getMessage());
         }
@@ -68,9 +69,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void dataReaderXML() {
         try {
-            int s = XSLTransformUtil.xmlxPaths().size();
+            int s = XSLTransformUtil.xmlPaths().size();
             for (int i = 0; i < s; i++) {
-                Map<String, String> l = XSLTransformUtil.xmlxPaths().get(i);
+                Map<String, String> l = XSLTransformUtil.xmlPaths().get(i);
                 Employee employee = new Employee();
                 employee.setEmployeeId(l.get("XpathEmployeeIDKey"));
                 employee.setFullName(l.get("XpathEmployeeNameKey"));
@@ -89,7 +90,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void addEmployee() {
         try {
-            preparedStatement = connection.prepareStatement(QueryUtil.getEmployeeById(CommonConstants.QUERY_ID_INSERT_EMPLOYEES));
+            preparedStatement = connection.prepareStatement(QueryUtil.SelectQuery(CommonConstants.QUERY_ID_INSERT_EMPLOYEES));
             connection.setAutoCommit(false);
             for (Employee employee : employeeList) {
                 preparedStatement.setString(1, employee.getEmployeeId());
@@ -111,7 +112,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void getEmployees() {
         ArrayList<Employee> employees = new ArrayList<>();
         try {
-            preparedStatement = connection.prepareStatement(QueryUtil.getEmployeeById(CommonConstants.QUERY_ID_ALL_EMPLOYEES));
+            preparedStatement = connection.prepareStatement(QueryUtil.SelectQuery(CommonConstants.QUERY_ID_ALL_EMPLOYEES));
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Employee employee = new Employee();
@@ -133,7 +134,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void getEmployeeByID(String id) {
         Employee employee = new Employee();
         try {
-            preparedStatement = connection.prepareStatement(QueryUtil.getEmployeeById(CommonConstants.QUERY_ID_GET_EMPLOYEE));
+            preparedStatement = connection.prepareStatement(QueryUtil.SelectQuery(CommonConstants.QUERY_ID_GET_EMPLOYEE));
             preparedStatement.setString(1, id);
             ResultSet R = preparedStatement.executeQuery();
             while (R.next()) {
@@ -153,14 +154,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void updateEmployee(String id) {
-
-    }
-
-    @Override
     public void removeEmployee(String id) {
         try {
-            preparedStatement = connection.prepareStatement(QueryUtil.getEmployeeById(CommonConstants.QUERY_ID_REMOVE_EMPLOYEE));
+            preparedStatement = connection.prepareStatement(QueryUtil.SelectQuery(CommonConstants.QUERY_ID_REMOVE_EMPLOYEE));
             preparedStatement.setString(1, id);
             preparedStatement.executeUpdate();
             connection.commit();

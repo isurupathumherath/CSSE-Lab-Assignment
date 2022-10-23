@@ -9,20 +9,15 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 /**
- * Get Employee By Id.
+ * Get Employee By ID.
  *
- * @param id - the id
- * @return the string
- * @throws SAXException the SAX exception
- * @throws IOException Signals that an I/O exception has occurred.
- * @throws ParserConfigurationException the parser configuration exception
  */
 public class QueryUtil extends CommonUtil {
 
-	public static String getEmployeeById(String id) throws SAXException, IOException, ParserConfigurationException {
+	public static String SelectQuery(String id) throws SAXException, IOException, ParserConfigurationException {
 		NodeList nodeList; 
 		Element element = null;
-		
+
 		/*
 		 * Read the MainQuery.xml file and read each query node into node
 		 * list. It refers tag name query
@@ -30,9 +25,9 @@ public class QueryUtil extends CommonUtil {
 		nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder()
 				.parse(new File(CommonConstants.QUERY_XML))
 				.getElementsByTagName(CommonConstants.TAG_NAME);
-		
+
 		/*
-		 * Extract the node from node list using query id query id is taken from
+		 * Extract the node from node list using query id is taken from
 		 * query node attribute
 		 */
 		for (int value = 0; value < nodeList.getLength(); value++) {

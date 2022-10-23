@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Querys>
 
-	<!-- Create table employee Query -->
+	<!-- Create table employee SelectQuery -->
 	<query id="create_employee_table">
         <![CDATA[ CREATE TABLE employees( EmployeeID varchar(10) not null, 
         								  Fullname varchar(25), 
@@ -14,17 +14,17 @@
         								 ]]>
 	</query>
 	
-	<!-- DROP TABLE employee Query -->
+	<!-- DROP TABLE employee SelectQuery -->
 	<query id="drop_employee_table">
          <![CDATA[ DROP TABLE IF EXISTS employees ]]>
 	</query>
 	
-	<!-- Add new employee Query -->
+	<!-- Add new employee SelectQuery -->
 	<query id="insert_employee">
         <![CDATA[insert into employees (EmployeeID, Fullname, Address, Faculty, Department, Designation) values (?, ?, ?, ?, ?, ?)]]>
 	</query>
 	
-	<!-- Select a particular employee by id Query -->
+	<!-- Select a particular employee by id SelectQuery -->
 	<query id="employee_by_id">
          <![CDATA[select * from employees where employees.EmployeeID = ?]]>
 	</query>
@@ -34,7 +34,7 @@
          <![CDATA[ select * from employees]]>
 	</query>
 	
-	<!-- Delete a particular employee by id Query -->
+	<!-- Delete a particular employee by id SelectQuery -->
 	<query id="remove_employee">
          <![CDATA[delete from employees where employees.EmployeeID = ?]]>
 	</query>
